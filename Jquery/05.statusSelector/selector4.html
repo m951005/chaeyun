@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        // :has(선택자) => 지정된 선택자를 포함하고 있는 태그를 선택
+        $(function(){
+            $("div:has(p)").css("background-color", "yellow");
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <p>p태그를 가지고 있는 div태그</p>
+    </div>
+    <div>
+        <div>div태그를 가지고 있는 div태그</div>
+    </div>
+</body>
+</html>

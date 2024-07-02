@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        /*
+            jQuery 기본문법
+            $(선택자).명령어();
+        */
+       $(document).ready(function(){
+            //jQuery 코드
+            $("p").append("jQuery");
+       });
+       // $(document).ready() -> $()로 줄여서 씀
+       $(function(){
+            $("p").append("World");
+       });
+    </script>
+</head>
+<body>
+    <p>Hello </p>
+</body>
+</html>

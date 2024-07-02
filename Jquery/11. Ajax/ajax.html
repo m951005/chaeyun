@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        /*
+            ajax(Asynchronous JavaScript and XML)
+            : 동적 웹체이지를 만들기 위한 개발 기법.
+              백그라운드 영역에서 서버와 통신하여 그 결과를 웹페이지의 일부분에만 표시할 수 있다.
+        */
+        function getText(){
+            //ajax 기본형태
+            // $.ajax(자바스크립트의 오브젝트 타입);
+            $.ajax({
+                url: "data1.txt",
+                type: "get",    //default값이 get, get은 생략가능
+                dataType: "text",   //dataType 생략해도 type에 상관없이 자동으로 매핑됨
+                success: function(data){
+                    console.log(data);
+                    // console.log(success);
+                    // console.log(xhr);
+                    $("#result").text(data);
+                }
+            });
+        }
+        function getHtml(){
+            $.ajax({
+                url: "data2.html",
+                success: function(data){
+                    console.log(data);
+                    $("#result").html(data);
+                }
+            });
+        }
+        function getXml(){
+            $.ajax({
+                url: "data3.xml",
+                success: function(data){
+                    // console.log(data);
+                    let xmlData = $(data).find("data");
+                    // console.log(xmlData);
+                    $(xmlData).each(function(idx, obj){
+                        // console.log(idx);
+                        // console.log(obj);
+                        let str1 = $(obj).find("str1");
+                        let str2 = $(obj).find("str2");
+                        $("#result").append("data1: " + $(str1).text() + "<br>");
+                        $("#result").append("data2: " + $(str2).text() + "<br>");
+                    });
+                }
+            });
+        }
+        function getJson(){
+            //Json은 속성도 ""문자열형식으로 써줘야 한다.(JavaScript와 차이)
+            $.ajax({
+                url: "data4.json",
+                success: function(data){
+                    console.log(data);
+                    $("#result").append("data1: " + data.data1 + "<br>");
+                    $("#result").append("data2: " + data.data2 + "<br>");
+                    $("#result").append("data3: " + data.data3 + "<br>");
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="문자열 데이터" onclick="getText()">
+    <input type="button" value="HTML 데이터" onclick="getHtml()">
+    <input type="button" value="XML 데이터" onclick="getXml()">
+    <input type="button" value="JSON 데이터" onclick="getJson()">
+    <p>
+    <div id="result"></div>
+</body>
+</html>

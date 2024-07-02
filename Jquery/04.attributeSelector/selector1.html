@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        /*
+            속성선택자 => 태그에 설정되어 있는 속성을 통해 선택하는 선택자
+            [속성] : 속성을 가지고 있는 태그를 선택
+            [속성 = 값] : 속성의 값이 지정된 값과 일치하는 태그를 선택
+            [속성 != 값] : 속성의 값이 지정된 값과 일치하지 않는 태그를 선택 (속성의 유무는 상관없음)
+        */
+       $(function(){
+            $("p[title]").css("background-color","skyblue");
+            $("p[title = 'test1']").css("background-color","orange");
+            $("p[title != 'test1']").css("background-color","yellow");
+       });
+    </script>
+</head>
+<body>
+    <p>속성이 없는 p태그</p>
+    <p title="test1">title 속성의 값이 test1인 p태그</p>
+    <p title="test2">title 속성의 값이 test2인 p태그</p>
+</body>
+</html>

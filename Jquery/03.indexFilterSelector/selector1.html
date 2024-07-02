@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        /*
+            인덱스 번째 태그 선택하기
+            :eq(인덱스) => 인덱스(0부터시작)번째 해당하는 태그를 선택
+            :nth-child(인덱스) => 각 영역의 인덱스(1부터시작)번째 해당하는 태그를 선택
+                                인덱스 번째 태그가 선택자에 해당하지 않으면 선택되지 않는다.
+            :nth-of-type(인덱스) => 각 영역의 인덱스(1부터시작)번째 해당하는 태그를 선택
+        */
+       $(function(){
+            $("p:eq(2)").css("background-color","skyblue");
+            $("p:nth-child(1)").css("color","red");
+            $("p:nth-of-type(1)").css("font-size","30px");
+       });
+    </script>
+</head>
+<body>
+    <div>
+        <p>p태그</p>
+        <p>p태그</p>
+        <p>p태그</p>
+    </div>
+    <hr>
+    <div>
+        <p>p태그</p>
+        <p>p태그</p>
+        <p>p태그</p>
+    </div>
+    <hr>
+    <div>
+        <div>div태그</div>
+        <p>p태그</p>
+        <p>p태그</p>
+    </div>
+    <hr>
+</body>
+</html>

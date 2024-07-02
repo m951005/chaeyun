@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        /*
+            :input => input 태그들을 선택한다.
+            :text => type 속성이 text인 input 태그를 선택한다
+            :password => type 속성이 password인 input 태그를 선택한다
+            :radio => type 속성이 radio인 input 태그를 선택한다
+            :checkbox => type 속성이 checkbox인 input 태그를 선택한다
+            :submit => type 속성이 submit인 input 태그를 선택한다
+            :reset => type 속성이 reset인 input 태그를 선택한다
+            :button => type 속성이 button인 input 태그를 선택한다
+            :image => type 속성이 image인 input 태그를 선택한다
+            :file => type 속성이 file인 input 태그를 선택한다
+        */
+       $(function(){
+            $(":input").css("background-color", "lightblue");
+            $(":password").css("background-color", "yellow");
+       });
+    </script>
+</head>
+<body>
+    <input type="text" name="" id=""><br>
+    <input type="password" name="" id=""><br>
+    <input type="number" name="" id="">
+</body>
+</html>

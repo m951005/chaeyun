@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        // :contains('문자열') => 지정된 문자열이 콘텐츠에 포함되어 있는 태그를 선택
+        $(function(){
+            $("div:contains('jQuery')").css("background-color", "yellow");
+        });
+    </script>
+</head>
+<body>
+    <div>Hello World</div>
+    <div>Hello jQuery</div>
+    <div>jQuery World</div>
+</body>
+</html>

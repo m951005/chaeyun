@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        function getTest1(){
+            // text() : 태그 사이의 컨텐츠 문자열을 제어
+            // let str = document.getElementById("test1").innnerText;
+            let str = $("#test1").text();
+            alert(str);
+        }
+
+        function getTest2(){
+            // HTML 코드는 가져오지 못한다.
+            let str = $("#test2").text();
+            alert(str);
+        }
+
+        function getTest2Html(){
+            // HTML 코드자체를 가져온다.
+            let str = $("#test2").html();
+            alert(str);
+        }
+
+        function setTest3(){
+            // HTML 코드를 넣을 수는 없다. 문자열만 설정가능
+            // $("#test3").text("<a href='https://www.naver.com'> 네이버 </a>");
+            $("#test3").text("홍길동");
+        }
+
+        function setTest3Html(){
+            // HTML 코드를 설정한다.
+            $("#test3").html("<a href='https://www.naver.com'> 네이버 </a>");
+        }
+    </script>
+</head>
+<body>
+    <div id="test1">test1 문자열</div>
+    <input type="button" value="test1 문자열 가져오기" onclick="getTest1()">
+
+    <div id="test2">
+        <a href="https://www.google.com">Google</a>
+    </div>
+    <input type="button" value="test2 문자열 가져오기" onclick="getTest2()">
+    <input type="button" value="test2 HTML 가져오기" onclick="getTest2Html()">
+
+    <div id="test3">test3 문자열</div>
+    <input type="button" value="test3 문자열 설정하기" onclick="setTest3()">
+    <input type="button" value="test3 HTML 설정하기" onclick="setTest3Html()">
+</body>
+</html>

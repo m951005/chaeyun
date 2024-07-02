@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        /*
+            첫번째 태그 선택하기
+            (선택자):first => 선택자에 해당하는 태그 중 가장 처음 태그가 선택
+            :first-child => 선택자에 해당하는 태그 중 각 영역별 첫 태그가 선택
+                            처음 태그가 선택자에 해당하지 않으면 그 영역에서는 선택되지 않는다.
+            :first-of-type => 선택자에 해당하는 태그 중 각 영역별 처음 태그가 선택
+        */
+        $(function(){
+            $("p:first").css("background-color", "yellow");
+            $("p:first-child").css("color", "red");
+            $("p:first-of-type").css("font-size", "30px");
+        });
+    </script>
+</head>
+<body>
+    <!-- body 영역 내 가장 처음, p태그는 영역을 가지지 않음 -->
+    <p>p 태그</p>
+    <hr>
+    <div>
+        <p>div 안의 p태그</p>
+        <p>div 안의 p태그</p>
+        <p>div 안의 p태그</p>
+    </div>
+    <hr>
+    <div>
+        <div>div 안의 div태그</div>
+        <p>div 안의 p태그</p>
+        <p>div 안의 p태그</p>
+    </div>
+</body>
+</html>

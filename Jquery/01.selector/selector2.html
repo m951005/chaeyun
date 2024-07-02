@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        //자식 선택자 : 태그의 바로 하위 태그만 선택할 때 사용
+        //선택자1 > 선택자2
+        $(function(){
+            $("#test1 > h1").css("background-color", "skyblue");
+        });
+    </script>
+</head>
+<body>
+    <div id="test1">
+        <h1>자식 태그 h1</h1>
+        <div>
+            <h1>손자 태그 h1</h1>
+        </div>
+    </div>
+</body>
+</html>

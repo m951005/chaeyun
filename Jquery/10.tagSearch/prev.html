@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        /*
+            prev : 선택된 태그 이전 태그를 선택
+            prevAll : 선택된 태그 이전 태그들이 모두 선택
+            prevUntil(선택자2) : 선택된 태그 이전 태그들 중 선택자2 사이의 모든 태그들이 선택
+        */
+        $(function(){
+            $("#test1").prev().css("border-color", "red");
+            $("#test1").prevAll().css("border-style", "dotted");
+            $("#test1").prevUntil("#test2").css("border-width", "4px");
+        });
+    </script>
+    <style>
+        div {
+            border: 2px solid black;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="test2">div 1</div>
+    <div>div 2</div>
+    <div>div 3</div>
+    <div id="test1">div 4</div>
+    <div>div 5</div>
+</body>
+</html>

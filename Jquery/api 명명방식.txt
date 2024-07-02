@@ -1,0 +1,15 @@
+ex.회원관리 프로그램
+
+일반적인 URL 명명방식
+회원등록 /member/join post
+회원검색 /member/search?member_id=... get
+회원목록 /member/list get
+회원수정 /member/update post
+회원삭제 /member/delete?member_id=... get
+
+API URL 명명방식
+회원등록 /members post
+회원검색 /members/{member_id} get
+회원목록 /members get
+회원수정 /members put 또는 patch
+회원삭제 /members/{member_id} delete

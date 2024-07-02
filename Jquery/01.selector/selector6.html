@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        //선택자1 ~ 선택자2 : 선택자1 태그 바로 다음에 있는 모든 선택자2 태그를 선택
+        $(function(){
+            $("#test1 ~ p").css("background-color", "skyblue");
+        });
+    </script>
+</head>
+<body>
+    <p>p태그</p>
+    <p>p태그</p>
+    <p id="test1">p태그</p>
+    <div>div태그</div>
+    <p>p태그</p>
+    <p>p태그</p>
+    <p>p태그</p>
+</body>
+</html>

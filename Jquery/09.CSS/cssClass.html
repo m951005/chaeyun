@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        /*
+            addClass : css class를 추가한다.
+            removeClass : css class를 제거한다.
+            toggleClass : 지정된 클래스가 없으면 추가하고 있으면 제거한다.
+        */
+       function addClass(){
+        $("#test1").addClass("css1");
+       }
+
+       function removeClass(){
+        $("#test1").removeClass("css1");
+       }
+
+       function toggleClass(){
+        $("#test1").toggleClass("css1");
+       }
+    </script>
+    <style>
+        .css1 {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="test1">test1태그</h1>
+    <input type="button" value="CSS 클래스 추가하기" onclick="addClass()">
+    <input type="button" value="CSS 클래스 제거하기" onclick="removeClass()">
+    <input type="button" value="CSS 클래스 전환하기" onclick="toggleClass()">
+</body>
+</html>
