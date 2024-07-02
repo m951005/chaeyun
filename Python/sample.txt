@@ -1,0 +1,4 @@
+안녕 파이썬
+Hello Python
+abcdefg
+가나다라마바사
