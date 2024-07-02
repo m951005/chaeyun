@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML BOM</title>
+    <script>
+        /*
+        BOM: Browser Object Model (브라우저객체모델)
+        - 웰브라우저의 기능을 가져와서 쓰는 것.
+        1. window
+        2. location
+        3. alert(alert, confirm, prompt)
+        4. history
+        5. navigator
+        6. timing
+        7. cookie
+        */
+       function openWindow(){
+            window.open("https://www.google.com");  //브라우저의 창을 연다.
+       }
+       function closeWindow(){
+            window.close(); // x버튼
+       }
+       function locationHref(){
+            // console.log(location.href);  //현재경로 출력
+            location.href = "https://www.naver.com";
+       }
+       function alertWindow(){
+            alert("Alert");
+       }
+       function confirmWindow(){
+            let result = confirm("삭제하시겠습니까?");    //true or false return
+            console.log(result);
+       }
+       function goForward(){
+            history.forward();  // 앞으로 버튼
+       }
+       function goBack(){
+            history.back();     //뒤로 버튼
+       }
+    </script>
+</head>
+<body>
+    <input type="button" value="창 열기" onclick="openWindow()">
+    <input type="button" value="창 닫기" onclick="closeWindow()">
+    <input type="button" value="주소이동" onclick="locationHref()">
+    <input type="button" value="경고창" onclick="alertWindow()">
+    <input type="button" value="확인창" onclick="confirmWindow()">
+    <input type="button" value="앞으로" onclick="goForward()">
+    <input type="button" value="뒤로" onclick="goBack()">
+</body>
+</html>

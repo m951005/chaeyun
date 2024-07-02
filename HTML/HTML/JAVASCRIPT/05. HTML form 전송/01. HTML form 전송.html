@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML form 전송</title>
+    <script>
+        /*
+            GET: 빠르다. url에 정보가 보인다. (검색어)
+            POST: GET방식에 비해 느리다. url에 정보가 노출 X (보안)
+        */
+       function formCheck() {
+        try {
+            // let name = document.getElementById("name").value;
+            // console.log(name);
+            // //공백체크
+            // if(name == ""){
+            //     alert("이름은 공백으로 할 수 없습니다.");
+            //     return false;
+            // }
+
+            // let age = document.getElementById("age").value;
+            // // 문자형을 숫자형으로 변환해 주는 2가지 방법
+            // console.log(parseInt(age));
+            // let numAge = Number(age);
+
+            // if(isNaN(numAge)){
+            //     alert("숫자를 입력하세요.");
+            //     return false;
+            // }
+
+            // checkHobby();
+
+            // checkFruit();
+
+            checkSelected();
+
+            // let arr = checkPhone();
+            // console.log(arr);
+        } catch (error) {
+            console.log(error);
+        }
+            return false;
+        }
+        // form태그 onsubmit 속성에서 function이 실행되었을 때 true값이여야 정보가 전송됨.
+        
+        function checkPhone(){
+            //0. 입력받은 전화번호 가져와서 콘솔에서 확인
+            let phone = document.getElementById("phone").value;
+            console.log(phone);
+            //1. 13자리인지 확인 length
+            if(phone.length == 13){
+                alert("13자리 ok");
+            } else {
+                alert("다시 입력");
+                return false;
+            }
+            //2. -(하이픈)이 정확한 자리에 있는가 charAt(index)
+            if(phone.charAt(3) == "-" && phone.charAt(8) == "-"){
+                alert("'-' ok");
+            } else {
+                alert("다시 입력");
+                return false;
+            }
+            //3. '-'을 기준으로 잘라내서 배열로 반환 split()
+            let splitNumber = phone.split("-");
+            console.log(splitNumber);
+
+            /* 내가 짠 코드
+            let phone = document.getElementById("phone").value;
+            if(phone.length = 13 && phone.charAt(3) == "-" && phone.charAt(8) == "-"){
+                return phone.split("-");
+            } else {
+                alert("다시 입력하세요.");
+            }
+            */
+        }
+
+        function checkSelected(){
+            let hp = document.getElementById("homepage");
+            for(let i = 0; i < hp.length; i++){
+                if(hp[i].selected == true){
+                    alert(hp[i].value);
+                }
+            }
+        }
+
+        function checkHobby(){
+            let hobby = document.getElementsByName("hobby");
+            // console.log(hobby);
+            for(let i = 0; i < hobby.length; i++){
+                if(hobby[i].checked == true){
+                    console.log(hobby[i].value);
+                    break;
+                }
+            }
+       }
+
+       function checkRadio(str){
+            // 콘솔로 내가 누른 버튼의 value가 잘 들어왔는지 str 확인
+            console.log(str);
+            // name이 hobby인 라디오버튼에 접근
+            let hobby = document.getElementsByName("hobby");
+            // 반복문 돌리면서 value랑 str이 같은 엘리먼트이 있으면 그 엘리먼트의 속성을 true로
+            for(let i = 0; i < hobby.length; i++){
+                if(hobby[i].value == str){
+                    hobby[i].checked = true;
+                }
+            }
+       }
+
+       function checkFruit(){
+            let fruit = document.getElementsByName("fruit");
+            // console.log(fruit);
+            for(let i = 0; i < fruit.length; i++){
+                if(fruit[i].checked == true){
+                    console.log(fruit[i].value);
+                }
+            }
+        }
+        
+        function cancelChecked(){
+           let fruit = document.getElementsByName("fruit");
+           for(let i = 0; i < fruit.length; i++){
+               fruit[i].checked = false;
+           }
+       }
+
+       function allChecked(){
+        let fruit = document.getElementsByName("fruit");
+            for(let i = 0; i < fruit.length; i++){
+                fruit[i].checked = true;
+            }
+       }
+
+    </script>
+</head>
+
+<!-- onload 속성: head태그 모두 작성 후 실행되는 속성 -->
+<body onload="allChecked()">
+    <form action="https://www.naver.com" method="post"
+        onsubmit="return formCheck()">
+        <!-- onsubmit의 내용은 "return + 함수명"으로 작성 -->
+        <div>
+            <label for="name">이름: </label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div>
+            <label for="age">나이: </label>
+            <input type="text" name="age" id="age">
+            <!-- type을 number로 하면 문자 입력 안되므로 따로 체크해 줄 필요없음 -->
+        </div>
+        <div>
+            <input type="radio" name="hobby" id="baseball" value="baseball">
+            <label for="baseball">야구</label>
+            <input type="radio" name="hobby" id="basketball" value="basketball">
+            <label for="basketball">농구</label>
+            <input type="radio" name="hobby" id="football" value="football">
+            <label for="football">축구</label>
+            <input type="button" value="야구" onclick="checkRadio('baseball')">
+            <input type="button" value="농구" onclick="checkRadio('basketball')">
+            <input type="button" value="축구" onclick="checkRadio('football')">
+        </div>
+        <div>
+            <input type="checkbox" name="fruit" id="apple" value="apple">
+            <label for="apple">사과</label>
+            <input type="checkbox" name="fruit" id="banana" value="banana">
+            <label for="banana">바나나</label>
+            <input type="checkbox" name="fruit" id="orange" value="orange">
+            <label for="orange">오렌지</label>
+            <input type="button" value="전체취소" onclick="cancelChecked()">
+        </div>
+        <div>
+            <select name="homepage" id="homepage" onchange="alert('select 선택할 때 마다 실행되는 속성')">
+                <option value="">--선택하세요--</option>
+                <option value="naver">네이버</option>
+                <option value="google">구글</option>
+                <option value="daum">다음</option>
+            </select>
+        </div>
+        <div>
+            <label for="phone">전화번호: </label>
+            <input type="text" name="phone" id="phone" placeholder="ex) 010-1234-1234">
+        </div>
+        <div>
+            <input type="submit" value="전송하기">
+            <input type="reset" value="취소">
+        </div>
+    </form>
+    <!-- head 태그 안에 script를 작성하면 body 태그가 생성되기 전에 실행됨.
+        body 생성 후에 실행되어야 할 script는 body 하단에 작성 -->
+    <script>
+        let fruit = document.getElementsByName("fruit");
+            for(let i = 0; i < fruit.length; i++){
+                fruit[i].checked = true;
+            }
+    </script>
+</body>
+</html>

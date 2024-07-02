@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML DOM</title>
+    <script>
+        /*
+        DOM: Document Object Model(문서객체모델)
+        - 프로그램과 스크립트가 문서의 콘텐츠, 구조, 스타일 등에 동적으로 엑세스하여 업데이트 할 수 있도록 하는 플랫폼 및 언어중립적인 인터페이스
+
+        HTML 엘리먼트 찾기 (엘리먼트: 태그와 컨텐츠를 포함한 전체)
+        - document.getElementById(); -> 파라미터에 찾고자 하는 id값
+        - document.getElementsByTagName(); -> 태그이름으로 찾기. 배열로 return
+        - document.getElementsByClassName(); -> 클래스 이름으로 찾기. 배열로 return
+        - document.getElementsByName(); -> name 속성으로 찾기. 배열로 return
+
+        id(고유값), name, class
+        - id와 class: CSS에서 사용하기 위한 용도로 지정하는 경우가 많음.
+        - name: 서버를 붙이게 되면 name에 지정한 값이 서버로 넘어감.
+
+        HTML 엘리먼트 변경
+        - 엘리먼트변수.innerHTML = HTML 컨텐츠;
+
+        *innerText: 텍스트로 인식
+         innerHTML: 태그로 인식
+
+         엘리먼트의 속성값 추가 및 변경(style에 주로)
+         - 엘리먼트.setAttribute(속성의 이름, 속성값)
+         - 없는 속성을 쓰면 추가, 있는 속성을 쓰면 변경
+         - 엘리먼트.style.속성 = 속성값
+
+         HTML 엘리먼트 생성
+         - document.createElement(태그이름) : 엘리먼트 생성
+         - document.appendChild(엘리먼트) : 엘리먼트 추가
+         - document.removeChild(엘리먼트) : 엘리먼트 삭제
+         - document.replaceChild(엘리먼트1, 엘리먼즈2)
+            : 엘리먼트 교체(앞파라미터를 뒤파라미터로)
+         - document.write(text) : HTML 쓰기
+        */
+       function getId(){
+            let id = document.getElementById("demo");
+            console.log(id);
+            let str = document.getElementById("demo").innerText;
+            console.log(str);
+       }
+       function getTag(){
+            let tag = document.getElementsByTagName("span");
+            console.log(tag);
+            let tag2 = document.getElementsByTagName("span")[0].innerText;
+            console.log(tag2);
+       }
+       function getClass(){
+            let cls = document.getElementsByClassName("demo");
+            console.log(cls);
+            let cls2 = document.getElementsByClassName("demo")[0].innerText;
+            console.log(cls2);
+       }
+       function getName(){
+            let name = document.getElementsByName("name");
+            console.log(name);
+            let name2 = document.getElementsByName("name")[0].value;        // 동적인 값. value로 입력받은 값 출력함
+            console.log(name2);
+       }
+       function setHtml(){
+            let element = document.getElementById("demo");
+            element.innerHTML = "<a href='https://naver.com'>네이버</a>";
+
+       }
+       function setVal(){
+            let input = document.getElementById("name");
+            input.value = "손오공";
+       }
+       function setAttr(){
+        let element = document.getElementById("demo");
+        element.setAttribute("class", "test1");
+        element.setAttribute("id", "demo2");        // 중복 실행 불가. 한번만 실행해도 ID값이 바뀌므로 해당 function 실행 안됨.
+        console.log(element);
+       }
+       function setStyle(){
+        let element = document.getElementById("demo");
+        element.style.color = "blue";
+       }
+       function createTag(){
+            let element = document.createElement("div");
+            //<div></div>   ->  생성한 상태
+            element.setAttribute("id","id");
+            //<div id = "id"></div>
+            element.setAttribute("name","name");
+            //<div id = "id" name = "name"></div>
+            element.innerHTML = "생성된 div태그";
+            //<div id = "id" name = "name">생성된 div태그</div>
+            document.body.appendChild(element);
+       }
+    </script>
+</head>
+<body>
+    <input type="text" id="name" name="name" value="홍길동">
+    <div id="demo">안녕하세요.</div>
+    <p>
+        <div>
+            <span class="demo">반갑습니다.</span>
+        </div>
+    </p>
+    <input type="button" value="getId" onclick="getId()">
+    <input type="button" value="getTag" onclick="getTag()">
+    <input type="button" value="getClass" onclick="getClass()">
+    <input type="button" value="getName" onclick="getName()">
+    <input type="button" value="setHtml" onclick="setHtml()">
+    <input type="button" value="setVal" onclick="setVal()">
+    <input type="button" value="setAttr" onclick="setAttr()">
+    <input type="button" value="setStyle" onclick="setStyle()">
+    <input type="button" value="createTag" onclick="createTag()">
+</body>
+</html>

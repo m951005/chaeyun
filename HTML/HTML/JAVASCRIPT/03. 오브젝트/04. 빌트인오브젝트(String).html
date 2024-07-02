@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>빌트인오브젝트(String)</title>
+    <script>
+        /*
+        length: 문자열의 길이값을 반환
+        valueOf(): 프리미티브값을 반환
+        toString(): 문자열로 반환(숫자형 -> 문자형)
+        charAt(index): index번째 문자를 반환
+        indexOf(문자): 일치하는 문자 중 가장 작은 인덱스를 반환
+        lastIndexOf(문자): 일치하는 문자 중 가장 마지막 인덱스를 반환
+        concat(): 문자를 합침. +
+        toLowerCase(): 영문 소문자로 반환
+        toUpperCase(): 영문 대문자로 반환
+        trim(): 문자열 앞 뒤의 공백문자를 제거
+        slice(): 시작부터 끝 인덱스 바로 앞까지 값을 반환
+        substring(): slice와 비슷하지만 음수는 0으로 인식
+        substr(): 시작부터 지정한 문자수까지 반환
+        split(문자): 해당 문자 기준으로 잘라서 배열으로 반환
+        replace(): 매치된 결과를 지정한 값으로 대체
+        search(): 검색된 첫번째 인덱스를 반환
+        */
+    //    console.log(new String());
+       let str = "hello";
+
+       //valueOf()
+    //    console.log(str.valueOf());
+       let str2 = new String("hello2");
+    //    console.log(str2);
+
+       //length
+        console.log(str.length);
+
+        //slice(): 문자열에서 원하는 문자반 추출, 인덱스 이용.
+        str = "Hello World";
+        //str.slice(시작인덱스, 끝인덱스 + 1);
+        console.log(str.slice(6, 11));
+        // 끝나는 인덱스를 주지 않으면 마지막까지 추출
+        console.log(str.slice(6));
+        // 음수를 넣으면 뒤에서부터 자른다. -1 부터 센다.
+        console.log(str.slice(-5));
+        
+        //substring()
+        console.log(str.substring(6, 11));
+        //0보다 작은값(음수) 0으로 취급
+        console.log(str.substring(-5));
+
+        //substr(): 두번째 파라미터는 끝인덱스가 아니라 길이값
+        console.log(str.substr(6, 5));
+
+        //replace(): 대체. 첫번째 파라미터를 두번째 파라미터로 대체.
+        let result = str.replace("World", "홍길동");
+        console.log(result);
+
+        //trim()
+        str = " ab cd ";
+        console.log(str);
+        console.log(str.length);
+        console.log(str.trim());    //앞뒤의 공백 제거
+        console.log(str.trim().length);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

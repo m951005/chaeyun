@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 선택자</title>
+    <style>
+        /* 태그 선택자 : 태그명 + {}*/
+        /* p {
+            color: tomato;
+            text-align: center;
+        } */
+        /* 아이디 선택자 : #id명 + {} */
+        /* #center {
+            color: green;
+            text-align: left;
+        } */
+        /* 클래스 선택자 : .class명 + {} OR 특정태그.class명 + {} */
+        /* id : 고유한 하나의 속성 & class : 공통의 속성 */
+        /* .center {
+            color: skyblue;
+            text-align: right;
+        }
+        p.center {
+            color: yellowgreen;
+        } */
+        /* 그룹 선택자 : 태그, 태그 + {} */
+        p, h1 {
+            color: cornflowerblue;
+            text-align: center;
+        }
+        /* 자손(자식, 손자 포함) 선택자 : 부모태그 자식태그 + {} */
+        p b {
+            color: coral;
+        }
+        /* 전체 선택자 : * + {} */
+        * {
+            font-size: 15px;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+   <p>마리아 멀리 지나고 계십니다. <b>헤는 피어나듯이 부끄러운 소학교 자랑처럼</b> 너무나 없이 당신은 봅니다.</p>
+
+   <p id="center">내 불러 무성할 언덕 무엇인지 속의 이름과 있습니다. 별 나는 이름을 봅니다. 별에도 위에 풀이 멀리 불러 계십니다.</p>
+
+    <p class="center">너무나 이름을 노루, 노새, 어머니 어머님, 흙으로 있습니다. 벌써 이름과 한 무성할 아스라히 이 밤이 듯합니다. 
+        흙으로 이름자 아스라히 다하지 쉬이 써 오는 이웃 봅니다. 하나의 나는 쉬이 자랑처럼 동경과 이제 위에 멀리 까닭입니다.</p>
+
+    <div class="center">하늘에는 별을 된 이름과, 버리었습니다. 시와 새겨지는 다 나의 가을 하나에 봅니다. 
+        봄이 딴은 하나에 너무나 까닭입니다. 이름을 것은 이 언덕 토끼, 하나에 계십니다.</div>
+    
+    <h1>쓸쓸함과 별들을 이름자를 다 별에도 나는 까닭입니다. 부끄러운 시와 하나에 이름을 없이 계십니다.</h1>
+
+    <p>오는 쉬이 하나에 위에 하나에 그리고 봅니다. 내 그리고 이름과, 다 시와 가득 책상을 말 봅니다. 소녀들의 못 그리워 된 슬퍼하는 가슴속에 봅니다.</p>
+</body>
+</html>

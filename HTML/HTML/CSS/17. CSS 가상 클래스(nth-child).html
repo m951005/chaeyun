@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 가상 클래스(nth-child, nth-of-type)</title>
+    <style>
+        .box {
+            border: 5px solid black;
+            text-align: center;
+        }
+        .box div {
+            border: 5px solid #000;
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
+        .box div:nth-of-type(1) {
+            background-color: blueviolet;
+        }
+        .box div:nth-of-type(2) {
+            background-color: tomato;
+        }
+        .box div:nth-of-type(3) {
+            background-color: palevioletred;
+        }
+        .box div:nth-of-type(4) {
+            background-color: coral;
+        }
+        /* 
+            nth-child : type 상관없이 자식태그의 순서
+            nth-of-type : 지정 type에서의 자식태그 순서
+        */
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Headline Text</h2>
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div>box4</div>
+    </div>
+</body>
+</html>

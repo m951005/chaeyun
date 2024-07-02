@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 가상 클래스(first-child, last-child)</title>
+    <style>
+        .tab-inner {
+            width: 400px;
+        }
+        .btn span {
+            display: inline-block;
+            width: 150px;
+            text-align: center;
+            padding: 5px;
+            border: 1px solid black;
+        }
+        .btn span:first-child {
+            background-color: #ccc;
+        }
+        .btn span:last-child {
+            background-color: antiquewhite;
+        }
+        .tab {
+            border: 1px solid black;
+        }
+        .tab a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid black;
+            margin: 5px;
+        }
+        .tab a:last-child {
+            border-bottom: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="tab-inner">
+        <div class="btn">
+            <span>공지사항</span>
+            <span>문의게시판</span>
+        </div>
+        <div class="tab">
+            <a href="#none">문의사항 입니다....</a>
+            <a href="#none">문의사항 입니다....</a>
+            <a href="#none">문의사항 입니다....</a>
+            <a href="#none">문의사항 입니다....</a>
+            <a href="#none">문의사항 입니다....</a>
+        </div>
+    </div>
+</body>
+</html>

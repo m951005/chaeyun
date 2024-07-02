@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>빌트인오브젝트(Array)</title>
+    <script>
+        /*
+        Array: 배열
+        형태: [] 대괄호, 그 안에 데이터들이 들어간다.
+        ex) [123, "ABC", 3.14]
+        자바와 다른점: 데이터타입을 통일하지 않아도 된다.
+        특징: 순서를 가지고 있다. 0부터 시작(인덱스)
+        생성방법
+        - new Array();
+        - Array();
+        - [];
+        프로퍼티(속성), 함수
+        - length: 배열에 저장된 엘리먼트(요소)의 수
+        - push(): 배열의 끝에 엘리먼트를 추가
+        - pop(): 배열의 끝에 엘리먼트를 삭제하고 그 엘리먼트를 반환
+        - sort(): 엘리먼트 값을 유니코드 순서로 정렬하여 반환
+        - reverse(): 엘리먼트의 위치를 역순으로 바꾸어서 반환
+        */
+    //    let array = new Array();     // new 키워드 안쓰는걸 추천
+    //    console.log(array);
+    //    let array2 = [];
+    //    console.log(array2);
+        let fruits = ["바나나", "오렌지", "사과", "망고"];
+        console.log(fruits);
+        fruits.push("레몬");
+        console.log(fruits);
+        // 엘리먼트 수정
+        fruits[1] = "포도";
+        console.log(fruits);
+        // 엘리먼트 삭제
+        let f = fruits.pop();
+        console.log(fruits);
+        console.log(f);
+        // 없는 인덱스를 적으면
+        fruits[6] = "수박";     // 오류 나지않고 건너띈 인덱스자리는 empty(null), 지정한 인덱스자리로 값 들어감.
+        console.log(fruits);
+        console.log(fruits[5]); // 비어있는 index -> undefined
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>링크, 이미지</title>
+</head>
+<body>
+    <h1>링크 만들기</h1>
+    <!-- <a> 태그 : HTML내에 링크를 생성하는 태그
+        href 속성 : 링크로 이동할 문서나 사이트의 주소값을 지정
+
+            절대 경로 : ROOT(최상위 경로)를 기준으로 찾는다.
+                    ex) "/Users/Minji/DEV/HTML/HTML/달력만들기 실습.html"
+                    (./ : 현재경로, ../ : 상위경로)
+
+            상대 경로 : html 파일이 위치한 경로를 기준으로 찾는다.
+    -->
+    <!-- target 속성 : 링크가 이동할 위치를 지정
+
+            _blank : 새 탭 혹은 새 윈도우에서 페이지를 오픈
+            _self : 기본 설정, 현재 윈도우 혹은 탭에서 링크 이동
+            _parent : 부모 프레임에서 페이지를 오픈
+            _top : 전체화면으로 페이지를 오픈
+    -->
+    <!-- <img> : HTML 내에 이미지를 불러오는 태그 -->
+    <div><a href="달력만들기 실습.html">2023년 8월 달력</a></div>
+    <a href="https://www.naver.com" target="_blank">
+        <img src="./img/naverlogo.png" alt="네이버 로고">
+    </a><br>
+    <a href="https://www.google.com" target="_self">
+        <img src="./img/googlelogo.png" alt="구글 로고">
+    </a><br>
+    <a href="https://www.daum.net" target="_parent">
+        <img src="./img/daumlogo.png" alt="다음 로고">
+    </a>
+</body>
+</html>

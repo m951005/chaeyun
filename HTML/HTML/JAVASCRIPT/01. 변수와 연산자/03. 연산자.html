@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>연산자</title>
+    <script>
+        /*
+        1. 산술연산자(+, -, *, /, %, ++, --, **)
+        2. 대입연산자(+=, -=, *=, /=, %=, **=)
+        3. 비교연산자(>, <, >=, <=, ==, ===)
+        - ==: 데이터타입까지는 비교안함.
+        - ===: 데이터타입까지 비교.
+        4. 논리연산자(&&, ||, !) and, or, not
+        5. 비트연산자
+        */
+       let x = 10;
+       let y = 6;
+       console.log(x + y);
+       console.log(x - y);
+       console.log(x * y);
+       console.log(x / y); // 결과가 실수.
+       console.log(x % y);
+       console.log(x++);
+       console.log(x--);
+       console.log(x ** y); // 거듭제곱(x의 y승)
+       //문자열 더하기
+       let str1 = "hello";
+       let str2 = "world";
+       console.log(str1 + " " + str2);
+       let num1 = "5";
+       let num2 = 5;
+       console.log(num1 + num2);
+       //비교 연산
+       console.log("5" == 5); // true
+       console.log("5" === 5); // false
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

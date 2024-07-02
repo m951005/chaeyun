@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>빌트인오브젝트(number)</title>
+    <script>
+        //생성방법
+        let num = Number(100);
+        // console.log(num);
+        // console.log(typeof(num));
+        num = Number(false);    // true: 1, false: 0
+        // console.log(num);
+        // console.log(typeof(num));
+        num = Number("100");
+        // console.log(num);
+        // console.log(typeof(num));
+        num = Number("가나다");     //NaN: Not a Number
+        // console.log(num);
+        // console.log(typeof(num));
+
+        let x = 123;
+        console.log(x);
+        console.log(typeof(x));
+        console.log(x.valueOf());
+        console.log(typeof(x.valueOf()));
+
+        let num2 = new Number();
+        console.log(num2);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>폼 관련 태그</title>
+</head>
+<body>
+    <!-- 
+        <form>...</form> 태그의 속성
+        action : <form> 태그 안의 내용을 전송할 서버의 주소
+        method : 사용자가 입력한 내용을 서버에 전송하는 방식을 지정
+            - get(default) : 주소 표시줄에 사용자가 입력한 내용이 그대로 노출된다.
+                    입력 내용 길이에 제한이 있다. (최대 4096byte 까지만 전송 가능)
+            - post : 입력 내용의 길이 제한이 없고, 사용자가 입력한 내용이 노출되지 않는다.
+        main : 폼의 이름을 지정
+     -->
+    <form action="join" method="post">
+        <label for="id">아이디 : </label>
+        <input type="text" name="id" id="id" class="id" value="hong"><br>
+        <label for="name">이름 : </label>
+        <input type="text" name="name" id="name" class="name"><br>
+        <label for="password">패스워드 : </label>
+        <input type="password" name="password" id="password"><br>
+
+        <label for="HTML">HTML</label>
+        <input type="radio" name="fav_language" id="HTML">
+        <label for="CSS">CSS</label>
+        <input type="radio" name="fav_language" id="CSS" checked>
+        <label for="JavaScript">JavaScript</label>
+        <input type="radio" name="fav_language" id="JavaScript">
+        <br><br>
+
+        <label for="bike">Bike</label>
+        <input type="checkbox" name="bike" id="bike">
+        <label for="car">Car</label>
+        <input type="checkbox" name="car" id="car">
+        <label for="boat">Boat</label>
+        <input type="checkbox" name="boat" id="boat">
+        <label for="airplane">Airplane</label>
+        <input type="checkbox" name="airplane" id="airplane">
+
+        <br><br>
+        <input type="submit" value="전송하기">
+        <input type="reset" value="취소하기">
+    </form>
+</body>
+</html>

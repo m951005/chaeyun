@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 가로 배치하기(clear)</title>
+    <style>
+        /* 
+            clear: float 속성이 적용되면 다음 요소가 자동으로 float 속성을 받는데, 이 속성을 해제시킨다.
+            clear: left | right | both
+            - left: float left 속성 상속을 해지
+            - right: float right 속성 상속을 해지
+            - both: 모든 float 속성 상속을 해지
+
+        */
+        .parent {
+            border: 5px solid red;
+            width: 600px;
+        }
+        .top {
+            background-color: purple;
+            height: 50px;
+        }
+        .left {
+            background-color: skyblue;
+            height: 100px;
+            width: 200px;
+            float: left;
+        }
+        .right {
+            background-color: orange;
+            height: 100px;
+            width: 400px;
+            float: right;
+        }
+        .clear {
+            background-color: purple;
+            height: 50px;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="top">float: none</div>
+        <div class="left">float: left</div>
+        <div class="right">float: right</div>
+        <div class="clear">float: both</div>
+    </div>
+</body>
+</html>

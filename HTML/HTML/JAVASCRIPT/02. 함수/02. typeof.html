@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>typeof</title>
+    <script>
+        //typeof(): 데이터타입을 알려준다.
+        let num = 10;
+        console.log(typeof(num));
+        let str = "안녕하세요";
+        console.log(typeof(str));
+        let bool = true;
+        console.log(typeof(bool));
+        let nl = null;
+        console.log(typeof(nl));
+        let und;
+        console.log(typeof(und));
+        function getFullName(firstName, lastName){
+            let fullName = firstName + " " + lastName;
+            return fullName;
+        }
+        let func = getFullName;
+        console.log(typeof(func));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

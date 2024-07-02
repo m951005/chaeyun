@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입 폼</title>
+    <style>
+        * {
+            font-size: small;
+        }
+        table, tr {
+            border: 1px black solid;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 5px;
+        }
+        .color {
+            background-color: lightgrey;
+        }
+        span {
+            color: red;
+        }
+        input{
+            margin: 5px;
+        }
+    </style>
+    <script>
+        function formCheck(){
+            let flag = false;
+
+            if(checkEssential() && checkId() && checkName() && checkPw() && checkAddress() && checkPhone() && checkAgency()){
+                flag = true;
+            } else {
+                flag = false;
+            }
+
+            return flag;
+        }
+
+        function checkId(){
+            let id = document.getElementById("id").value;
+            if(id.length >= 3 && id.length <= 12){
+                return true;
+            } else {
+                alert("아이디는 3 ~ 12 글자 사이로 입력해야 합니다.");
+                return false;
+            }
+        }
+        
+        function checkName(){
+            let name = document.getElementById("name").value;
+            console.log(name);
+            if(name.length > 2 && name.length < 5){
+                return true;
+            } else {
+                alert("이름은 3 ~ 4글자 사이로 입력해야 합니다.");
+                return false;
+            }
+        }
+        
+        function checkPw(){
+            let pw = document.getElementById("password").value;
+            let pwCheck = document.getElementById("checkPw").value;
+            console.log(pw);
+            if(pw == pwCheck){
+                if(pw.length >= 5 && pw.length <= 8){
+                    return true;
+                } else {
+                    alert("비밀번호는 5 ~ 8글자 사이로 입력해야 합니다.");
+                    return false;
+                }
+            } else {
+                alert("비밀번호가 다릅니다.");
+                return false;
+            }
+        }
+
+        function checkAddress(){
+            let address = document.getElementById("address").value;
+            let num = Number(address);
+            console.log(num);
+            if(isNaN(num)){
+                alert("우편번호는 숫자여야만 합니다.");
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        function checkPhone(){
+            let first = Number(document.getElementById("firstPh").value);
+            let second = Number(document.getElementById("secondPh").value);
+            
+            if(isNaN(first) || isNaN(second)){
+                alert("휴대폰 번호는 숫자여야만 합니다.");
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        function checkAgency(){
+            let agency = document.getElementsByName("agency");
+            for(let i = 0; i < agency.length; i++){
+                if(agency[i].checked == true){
+                    return true;
+                    break;
+                } else {
+                    alert("통신사를 반드시 선택해 주세요.");
+                    return false;
+                }
+            }
+        }
+
+        function checkEssential(){
+            let id = document.getElementById("id").value;
+            let name = document.getElementById("name").value;
+            let pw = document.getElementById("password").value;
+            let email = document.getElementById("emailId").value;
+            let ph = document.getElementById("firstPh").value;
+
+            if(id != "" && name != "" && pw != "" && email != "" && ph != ""){
+                return true;
+            } else {
+                alert("필수 항목을 입력해 주세요.")
+                return false;
+            }
+        }
+
+            function setDomain() {
+            var selected_domain = document.getElementById("selectDomain").value;
+            var domain = document.getElementById("domain").value;
+            
+            switch (selected_domain) {
+                case "google" : document.getElementById("domain").value = "google.com"; break;
+                case "naver" : document.getElementById("domain").value = "naver.com"; break;
+                case "daum" : document.getElementById("domain").value = "daum.net"; break;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="join" method="post" onsubmit="return formCheck()">
+        <table style="width: 700px;" >
+            <caption style="text-align: right;">
+                <span>(*)</span>부분은 필수 입력사항 입니다.
+            </caption>
+            <tr>
+                <td class = color>아이디<span>(*)</span></td>
+                <td>
+                    <input type="text" name="id" id="id">
+                    <input type="button" value="중복확인" onclick=checkId()><br>
+                    3~12자리 영문, 숫자 조합(대소문자 구분 없으며 특수기호 사용은 불가)
+                </td>
+            </tr>
+            <tr>
+                <td class = color>이름<span>(*)</span></td>
+                <td>
+                    <input type="text" name="name" id="name"> 
+                </td>
+            </tr>
+            <tr>
+                <td class = color>비밀번호<span>(*)</span></td>
+                <td>
+                    <input type="password" name="password" id="password">
+                    5~8자리 문자와 숫자를 이용하여 만드실 수 있습니다.
+                </td>
+            </tr>
+            <tr>
+                <td class = color>비밀번호 확인<span>(*)</span></td>
+                <td>
+                    <input type="password" name="checkPw" id="checkPw">
+                    영문은 대소문자를 구분합니다.
+                </td>
+            </tr>
+            <tr>
+                <td class = color>이메일<span>(*)</span></td>
+                <td>
+                    <input type="text" id="email">
+				    @ <input type="text" id="domain">
+                    <select id="selectDomain" onchange="setDomain()">
+                        <option value="none">선택하세요</option>
+                        <option value="google">google.com</option>
+                        <option value="naver">naver.com</option>
+                        <option value="daum">daum.net</option>
+                        <option value="">직접입력</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class = color>주소</td>
+                <td>
+                    <input type="text" name="address" id="address"><input type="button" value="우편번호 검색"><br>
+                    <input type="text" style="width: 300px;"><br>
+                    상세주소
+                    <input type="text">
+                </td>
+            </tr>
+            <tr>
+                <td class = color>휴대폰 번호<span>(*)</span></td>
+                <td>
+                    <select name="ph" id="ph">
+                        <option value="">선택</option>
+                        <option value="010">010</option>
+                        <option value="011">011</option>
+                        <option value="017">017</option>
+                        <option value="019">019</option>
+                    </select>
+                    <input type="text" name="firstPh" id="firstPh">
+                    -
+                    <input type="text" name="secondPh" id="secondPh">
+                    <input type="radio" name="agency" id="skt">
+                    <label for="skt">SKT</label>
+                    <input type="radio" name="agency" id="kt">
+                    <label for="kt">KT</label>
+                    <input type="radio" name="agency" id="lg">
+                    <label for="lg">LG</label>
+                </td>
+            </tr>
+            <tr>
+                <td class = color>광고 수신동의</td>
+                <td>
+                    <input type="checkbox" name="ad" id="adMail" value="adMail">
+                    <label for="adMail">광고 메일을 수신합니다.</label><br>
+                    <input type="checkbox" name="ad" id="adSms" value="adSms">
+                    <label for="adSms">광고 문자을 수신합니다.</label>
+                </td>
+            </tr>
+            <tr style="text-align: center; margin: 5px;">
+                <td colspan="2">
+                    <input type="submit" value="회원가입">
+                    <input type="reset" value="다시입력">
+                </td>
+                <td></td>
+            </tr>
+        </table>
+    </form>
+</body>
+<script>
+    let ad = document.getElementsByName("ad");
+    for(let i = 0; i < ad.length; i++){
+        ad[i].checked = true;
+        }
+
+</script>
+</html>

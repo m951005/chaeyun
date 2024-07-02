@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>박스모델</title>
+    <style>
+        h1 {
+            border: red 5px dotted;
+            padding: 50px;
+            margin: 100px;
+        }
+        /* 
+            border-style : 테두리의 스타일을 지정
+            속성값 - solid, dashed, dotted, double ...
+
+            border-width : 테두리의 두께를 지정
+            border-color : 테두리의 색깔을 지정
+            border : 한번에 모든 테두리의 속성을 할당
+        */
+        .box {
+            width: 400px;
+            height: 400px;
+            /* border-style: solid;
+            border-width: 1px;
+            border-color: brown; */
+            border: solid 2px blueviolet;
+            border-bottom: 5px dotted black;
+        }
+        .box2 {
+            width: 400px;
+            height: 100px;
+            font-size: 50px;
+            text-align: center;
+            border: 2px solid red;
+            /* 정해진 width, height 를 유지하도록 하는 속성 */
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h1>박스모델1</h1>
+    <h1>박스모델2</h1>
+    <div class="box"></div>
+    <p>
+    <div class="box2">Box Content</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 인라인 블럭 요소</title>
+    <style>
+        /* 
+            인라인 블럭 요소
+            - 한 줄에 여러개의 요소를 배치할 수 있다.
+            - 기본 너비값은 콘텐츠의 너비값
+            - 크기값을 가질 수 있다.
+            - 상하좌우 마진을 가질 수 있다.
+            ex) img, input, button, ...
+
+            display 속성을 설정하여 요소의 속성을 변경할 수 있다.
+        */
+        a {
+            display: inline-block;
+            /* 인라인 -> 블럭 속성으로 변경 */
+            border: 1px solid #000;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+            border-radius: 5px;text-decoration: none;
+            color: #000;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.naver.com">네이버</a>
+    <a href="https://www.google.com">구글</a>
+    <a href="https://www.daum.net">다음</a>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 텍스트 관련 서식</title>
+    <style>
+        /* 
+            기본값 : 16px, 1em, 100%, 12pt
+            font-size : 텍스트의 크기
+            font-weight : 글자의 두께 100~900, normal(400), bold(700), bolder, lighter etc...
+            font-family : 글꼴을 지정
+            font-style : 문자의 스타일 (normal, italic)
+            color : 글꼴의 색깔을 지정(color name, rgb(0,0,0), rgba(0,0,0,0.5), #ffffff -> fff)
+            text-decoration : 텍스트의 줄 표시 / 제거 (none, underline, overline, line-through)
+            text-transform : 텍스트를 대문자로 혹은 소문자로 변환 (none, uppercase, lowercase, capitalize)
+            text-align : 정렬방식 (center, left, right, justify)
+            text-shadow : 텍스트 그림자 효과
+        */
+        h1 {
+            font-size: 16px;
+            /* em : 상위 요소 기준으로 몇 배 크기(상대적) */
+            font-weight: normal;
+        }
+        body {
+            color: #000;
+            /* font-family: 궁서체; */
+            /* font-style: italic; */
+        }
+        a {
+            color: black;
+            text-decoration: none;
+        }
+        p.copy {
+            text-transform: capitalize;
+            text-align: center;
+            text-shadow: 1px 1px blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS 서식 관련 속성</h1>
+    <a href="#">네이버 바로가기</a>
+    <p>피어나듯이 새워 다 우는 버리었습니다. 나의 이네들은 풀이 내일 봅니다. 하나에 소학교 아이들의 별을 책상을 이름자를 하나 계십니다.</p>
+    <p class="copy">Copyright All Reserved by abcde 2023</p>
+</body>
+</html>

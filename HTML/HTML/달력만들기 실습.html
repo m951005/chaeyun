@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table, tr, td, th {
+            border: 1.5px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+    </style>
+    <title>달력</title>
+</head>
+<body>
+    <table>
+        <caption style="font-size: large;">2023. 08</caption>
+        <!-- 
+            <colgroup>, <col> 태그 : 열을 묶어주는 태그
+            span 속성으로 그룹을 합칠 수 있다.
+            <caption> 태그와 <tr> 태그 사이에 위치한다.
+         -->
+        <colgroup>
+            <col span="2" style="background-color: blanchedalmond;">
+            <col span="3" style="background-color:#f6fa87;">
+        </colgroup>
+        <tr>
+            <th style="color: red;">S</th>
+            <th>M</th>
+            <th>T</th>
+            <th>W</th>
+            <th>T</th>
+            <th>F</th>
+            <th style="color: blue;">S</th>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td style="color: blue;">5</td>
+        </tr>
+        <tr>
+            <td style="color: red; font-weight: bold;">6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td style="color: blue;">12</td>
+        </tr>
+        <tr>
+            <td style="color: red; font-weight: bold;">13</td>
+            <td>14</td>
+            <td style="color: red; font-weight: bold;">15</td>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+            <td style="color: blue;">19</td>
+        </tr>
+        <tr>
+            <td style="color: red; font-weight: bold;">20</td>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+            <td>24</td>
+            <td>25</td>
+            <td style="color: blue;">26</td>
+        </tr>
+        <tr>
+            <td style="color: red; font-weight: bold;">27</td>
+            <td>28</td>
+            <td>29</td>
+            <td>30</td>
+            <td>31</td>
+            <td colspan="2"></td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>시멘틱 태그</title>
+    <style>
+        .container {
+            border: 2px solid red;
+            width: 900px;
+            margin: auto;
+        }
+        header {
+            background-color: skyblue;
+            overflow: hidden;
+        }
+        header article {
+            background-color: grey;
+            width: 200px;
+            height: 100px;
+        }
+        .logo {
+            float: left;
+        }
+        .login {
+            float: right;
+        }
+        nav {
+            background-color: yellow;
+            height: 50px;
+            clear: both;
+        }
+        .box1 {
+            background-color: yellowgreen;
+            height: 250px;
+        }
+        .box2 {
+            background-color: gold;
+            overflow: hidden;
+        }
+        .box2 article {
+            width: 33.3333%;
+            height: 250px;
+            float: left;
+            border: 1px solid red;
+            box-sizing: border-box;
+        }
+        footer {
+            background-color: green;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <article class="logo">logo</article>
+            <article class="login">login</article>
+            <nav>navi</nav>
+        </header>
+        <section class="box1">box1</section>
+        <section class="box2">
+            <article class="sub1">sub1</article>
+            <article class="sub2">sub2</article>
+            <article class="sub3">sub3</article>
+        </section>
+        <footer>footer</footer>
+    </div>
+</body>
+</html>

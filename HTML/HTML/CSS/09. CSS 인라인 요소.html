@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 인라인 요소</title>
+    <style>
+        /* 
+            인라인 요소
+            - 한 줄에 여러개의 요소를 배치할 수 있다.
+            - 기본 너비값은 콘텐츠의 너비값
+            - 크기값을 가질 수 없다.
+            - 상하 마진은 가질 수 없다. (좌우 마진은 O)
+            ex) span, a, small, big, en, u, s, del, br, q, b, strong, mark, sub, ...
+
+            블럭 요소
+            - 한 줄에 한 개의 요소만 배치할 수 있다.
+            - 기본 너비값은 100%
+            - 크기값을 가질 수 있다.
+            - 상하좌우 마진을 가진다.
+            ex) div, table, figure, caption, header, nav, footer, section, article, aside, p, ul, ol, li, th, td, form, hr, h1~6, ...
+        */
+        span {
+            border: 2px solid red;
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            margin: 10px;
+        }
+        div {
+            border: 2px solid red;
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <span>span1 태그</span>
+    <span>span2 태그</span>
+    <div>div1 태그</div>
+    <div>div2 태그</div>
+</body>
+</html>

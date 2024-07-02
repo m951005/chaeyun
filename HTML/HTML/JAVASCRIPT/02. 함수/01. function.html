@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>함수</title>
+    <script>
+        /*
+        함수 이름 정의 방법
+        1. 숫자로 시작할 수 없고, 특수문자는 사용할 수 없다.
+        2. 영문자, $, _ 는 사용가능.
+
+        function 함수명(){} : 함수의 기본형태
+        */
+       function getFullName(firstName, lastName){
+        let fullName = firstName + " " + lastName;
+        // console.log(fullName);
+        return fullName;
+        }
+       let name = getFullName("길동", "홍");
+
+       let func = getFullName;
+       func("길동", "홍");
+
+       function myFunction(a, b){
+        return a + b;
+       }
+
+       let result = myFunction(2, 3);
+       console.log(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

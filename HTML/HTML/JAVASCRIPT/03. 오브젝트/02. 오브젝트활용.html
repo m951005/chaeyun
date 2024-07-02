@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>오브젝트 활용</title>
+    <script>
+        //프로퍼티(속성) 변경 및 추가
+        let book = {};
+        // console.log(book);
+
+        //프로퍼티 추가
+        // : 없는 속성값을 넣으면 추가, 있는 속성값을 넣으면 수정
+        book.title = "자바스크립트";
+        book.price = 15000;     //추가
+        // console.log(book);
+        book.price = 20000;     //변경
+        // console.log(book);
+
+        //수정하는 다른 방법
+        book['price'] = 25000;
+        // console.log(book);
+
+        //for ~ in
+        let sports = {
+            soccer: "축구",
+            basketball: "농구",
+            baseball: "야구"
+        };
+        //for(let 한개씩 가져와서 대입할 변수명 in 오브젝트명){}
+        for(let item in sports){
+            console.log(item);          //속성이름 출력
+            console.log(sports[item])   //속성값 출력
+        }
+
+        for(let i = 0; i < 10; i++){
+            if(i % 3 == 0) continue;
+            console.log(i);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 목록 관련 서식</title>
+    <style>
+        .menu {
+            list-style: none;
+        }
+        /* 
+            ::after -> 선택한 요소의 마지막에 의사요소를 삽입
+            ::before -> 선택한 요소의 앞에 의사요소를 삽입
+        */
+        .menu li::before {
+            content: '💓';
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li>menu-1</li>
+        <li>menu-2</li>
+        <li>menu-3</li>
+        <li>menu-4</li>
+        <li>menu-5</li>
+    </ul>
+</body>
+</html>
