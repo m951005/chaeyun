@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move package &apos;io&apos; to &apos;JavaEx/src&apos;&#x0A;- Original project: &apos;School_collection&apos;&#x0A;- Destination element: &apos;JavaEx/src&apos;&#x0A;- Original element: &apos;School_collection/src/io&apos;&#x0A;- Update references to refactored element" description="Move package" destination="=JavaEx/src" element1="/src&lt;io" flags="589830" fragments="1" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.movePackages" stamp="1689811664879" version="1.0"/>
+</session>
