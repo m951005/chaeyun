@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product List</title>
+    <!-- 부트스트랩 3 CSS 링크 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div th:replace="~{/templates/navi :: navi}"></div>
+<div class="container mt-5">
+    <h1>상품목록</h1>
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Stock Quantity</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.id}">Product ID</td>
+            <td><a th:href="@{/products/{id}(id=${product.id})}" th:text="${product.name}"></a></td>
+            <td th:text="${product.price}">Price</td>
+            <td th:text="${product.stockQuantity}">Stock Quantity</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- 부트스트랩 3 JavaScript 및 jQuery 링크 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

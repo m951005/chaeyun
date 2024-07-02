@@ -1,0 +1,28 @@
+<nav th:fragment="navi" class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">매인</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/products">상품목록</a></li>
+            <th:block th:unless="${session.loginUser}">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">로그인 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/users/login">로그인</a></li>
+                        <li><a href="/users/register">회원가입</a></li>
+                    </ul>
+                </li>
+            </th:block>
+            <th:block th:if="${session.loginUser}">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">마이페이지 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/orders">주문목록</a></li>
+                        <li><a href="/users/logout">로그아웃</a></li>
+                    </ul>
+                </li>
+            </th:block>
+        </ul>
+    </div>
+</nav>

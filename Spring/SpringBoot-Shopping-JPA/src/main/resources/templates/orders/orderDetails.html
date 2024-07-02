@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <!-- 부트스트랩 3 CSS 추가 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div th:replace="~{/templates/navi :: navi}"></div>
+<div class="container mt-4">
+    <h2>주문 상세 정보</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="item : ${order.items}">
+            <td th:text="${item.product.name}">Product Name</td>
+            <td th:text="${item.product.price}">Product Price</td>
+            <td th:text="${item.quantity}">Quantity</td>
+            <td th:text="${item.product.price * item.quantity}">Subtotal</td>
+            <td>
+                <th:block th:if="${order.orderStatus.name() == 'ORDERED'}">
+                    <a th:href="@{/orders/remove/{orderId}/{orderItemId}(orderId=${order.id}, orderItemId=${item.id})}" class="btn btn-danger btn-sm">Remove</a>
+                </th:block>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div th:if="${order.orderStatus.name() == 'ORDERED'}">
+        <a th:href="@{/orders/completeOrder/{orderId}(orderId=${order.id})}" class="btn btn-success">주문하기</a>
+    </div>
+    <div th:if="${order.orderStatus.name() == 'COMPLETED'}">
+        <a th:href="@{/orders/cancelOrder/{orderId}(orderId=${order.id})}" class="btn btn-danger">주문취소</a>
+    </div>
+    <div th:if="${order.orderStatus.name() == 'CANCELLED'}">
+        <button type="button" class="btn btn-info">주문취소 완료</button>
+    </div>
+</div>
+
+<!-- 부트스트랩과 관련된 JS 파일 -->
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

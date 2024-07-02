@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Order List</title>
+    <!-- 부트스트랩 3 CSS 추가 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div th:replace="~{/templates/navi :: navi}"></div>
+<div class="container mt-4">
+    <h2>주문 목록</h2>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Order ID</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Total Amount</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="order : ${orders}">
+            <td th:text="${order.id}">Order ID</td>
+            <td th:text="${#temporals.format(order.orderDate, 'yyyy-MM-dd HH:mm')}">Date</td>
+            <td th:text="${order.orderStatus}">Status</td>
+            <td th:text="${order.totalAmount}">Total Amount</td>
+            <td>
+                <a th:href="@{/orders/{id}(id=${order.id})}" class="btn btn-primary btn-sm">View Details</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- 부트스트랩 3 JS 추가 -->
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

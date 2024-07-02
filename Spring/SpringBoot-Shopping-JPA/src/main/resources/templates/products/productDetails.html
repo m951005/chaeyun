@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Details</title>
+  <!-- 부트스트랩 3 CSS 추가 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div th:replace="~{/templates/navi :: navi}"></div>
+<div class="container">
+  <h1 class="text-center">Product Details</h1>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2 th:text="${product.name}">Product Name</h2>
+    </div>
+    <div class="panel-body">
+      <p><strong>상품 아이디:</strong> <span th:text="${product.id}">Product ID</span></p>
+      <p><strong>가격:</strong> <span th:text="${product.price}">Price</span></p>
+      <p><strong>재고 수량:</strong> <span th:text="${product.stockQuantity}">Stock Quantity</span></p>
+    </div>
+  </div>
+  <!-- 장바구니 담기 폼 -->
+  <form th:action="@{/orders/add}" method="post">
+    <input type="hidden" name="product.id" th:value="${product.id}" />
+    <div class="form-group">
+      <label for="quantity">주문 수량:</label>
+      <input type="number" id="quantity" name="quantity" min="1" value="1" class="form-control" style="width: auto;">
+    </div>
+    <button type="submit" class="btn btn-primary">장바구니 담기</button>
+  </form>
+</div>
+
+<!-- 부트스트랩과 관련된 JS 파일 -->
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
