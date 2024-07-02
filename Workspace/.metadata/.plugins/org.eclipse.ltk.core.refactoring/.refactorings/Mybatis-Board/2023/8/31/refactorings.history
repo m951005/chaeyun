@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Copy element &apos;memberMapper.xml&apos; to &apos;memberMapper.xml&apos;&#x0A;- Original project: &apos;Mybatis-Board&apos;&#x0A;- Destination element: &apos;memberMapper.xml&apos;&#x0A;- Original element: &apos;memberMapper.xml&apos;" description="Copy file" element1="src/main/resources/mapper/memberMapper.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1691117506303" target="/Mybatis-Board/src/main/resources/mapper/memberMapper.xml" units="0" version="1.0"/>
-</session>

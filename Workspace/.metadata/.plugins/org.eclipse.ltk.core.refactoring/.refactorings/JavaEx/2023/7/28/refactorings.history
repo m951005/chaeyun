@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;oop.Player&apos; to &apos;DvdPlayer&apos;&#x0A;- Original project: &apos;JavaEx&apos;&#x0A;- Original element: &apos;oop.Player&apos;&#x0A;- Renamed element: &apos;oop.DvdPlayer&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Player&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;oop{Player.java[Player" matchStrategy="1" name="DvdPlayer" qualified="false" references="true" similarDeclarations="false" stamp="1688957003372" textual="false" version="1.0"/>
-</session>
